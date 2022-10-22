@@ -21,13 +21,13 @@ public class CollectionService {
 
     public Optional<Integer> findMax(List<Integer> list) {
         return list.stream()
-                .max((a, b) -> a - b);
+                .max(Integer::compare);
     }
 
     public Optional<Integer> findMin(List<List<Integer>> list) {
         return list.stream()
                 .flatMap(Collection::stream)
-                .min((a, b) -> a - b);
+                .min(Integer::compare);
     }
 
     public Integer sum(List<Integer> list) {
